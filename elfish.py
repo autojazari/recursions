@@ -11,7 +11,7 @@ Usage:
     $ python3 -m doctest elfish.py
 """
 def elfish(word):
-	"""
+    """
     >>> elfish('')
     False
 
@@ -37,5 +37,5 @@ def elfish(word):
     False
 
     """
-	if len(word) == 1:
-		return word == 'e' or word == 'l' or word == 'f'
+    if len(word) == 1:
+        return word == 'e' or word == 'l' or word == 'f'
