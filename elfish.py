@@ -9,33 +9,42 @@ and waffles, because they each contain those letters
 
 Usage:
     $ python3 -m doctest elfish.py
+
+Complexity: O(n log(n))
 """
-def elfish(word):
+from binary_search import search
+
+def elfish(word, letters):
     """
-    >>> elfish('')
+    >>> elfish('', 'efl')
     False
 
-    >>> elfish('whiteleaf')
+    >>> elfish('whiteleaf', 'elf')
     True
 
-    >>> elfish('whiteleaf')
+    >>> elfish('whiteleaf', 'elf')
     True
 
-    >>> elfish('unfriendly')
+    >>> elfish('unfriendly', 'elf')
     True
 
-    >>> elfish('waffles')
+    >>> elfish('waffles', 'elf')
     True
 
-    >>> elfish('waffles')
+    >>> elfish('waffles', 'elf')
     True
 
-    >>> elfish('sameh')
+    >>> elfish('sameh', 'elf')
     False
 
-    >>> elfish('wolf')
+    >>> elfish('wolf', 'elf')
     False
 
     """
-    if len(word) == 1:
-        return word == 'e' or word == 'l' or word == 'f'
+    result = True
+    for letter in letters:
+        result = result and search(word, letter)
+    return result
+
+
+elfish('waffles', 'elf')

@@ -6,6 +6,8 @@ Binary search implementation
 
 Usage:
     $ python3 -m doctest binary_search.py
+
+Complexity: O(log(n))
 """
 def search(array, item):
     """
